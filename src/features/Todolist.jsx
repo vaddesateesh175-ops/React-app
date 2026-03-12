@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useEffect} from "react";
 
 function TodoList(){
    const [todos, setTodos] = React.useState([]);
@@ -7,12 +7,15 @@ function TodoList(){
    function addTodo(){
       setTodos([...todos,ntd])
    }
-
+   
+   useEffect(()=>{
+     document.getElementById("d1").focus();
+   },[])
     return(
     
     <div className="mybox">
         <h1>Todo list</h1>
-        <input type="text" onChange={(ev)=>{setNtd(ev.target.value)}} />
+        <input type="text" onChange={(ev)=>{setNtd(ev.target.value)}} id="d1" />
         <button onClick={()=>{addTodo()}}> add todo</button>
 
         <ul>
