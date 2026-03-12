@@ -8,10 +8,14 @@ function Counter() {
   function inc(){
     setCount(count+1)
   }
+  function dec(){
+    setCount(count-1)
+  }
   return (
     <div className="mybox">
       <h1>Counter:{count}</h1>
       <button onClick={()=>{inc()}}>increment</button>
+      <button onClick={()=>{dec()}}>decrement</button>
     </div>
   );
 }
