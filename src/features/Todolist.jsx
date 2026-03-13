@@ -1,16 +1,38 @@
-import React,{useEffect} from "react";
+import { useEffect } from "react";
+import React,{ useCallback } from "react";
+import Todo from "./todo";
 
 function TodoList(){
-   const [todos, setTodos] = React.useState([]);
+   const [todos, setTodos] = React.useState([
+    "goto gova",
+    "play cricket",
+    "wach ai",
+    "kill bill pandey",
+   ]);
    const [ntd, setNtd] = React.useState("");
 
    function addTodo(){
-      setTodos([...todos,ntd])
+      //setTodos([...todos,ntd])
+      setTodos((cTodos)=>{
+        cTodos.push(ntd)
+        return([...cTodos])
+      })
    }
+    // function handleDelete(ind){
+    //     setTodos((ctodos) => {
+    //     ctodos.splice(ind, 1);
+    //     return [...ctodos];
+    //     });
+    // }
+    // again the todos are rerendering so  we use callback function ti will save the reference 
+   const handleDelete = useCallback(function (ind) {
+    setTodos((ctodos) => {
+      ctodos.splice(ind, 1);
+      return [...ctodos];
+    });
+  }, []);
    
-   useEffect(()=>{
-     document.getElementById("d1").focus();
-   },[])
+  
     return(
     
     <div className="mybox">
@@ -20,8 +42,8 @@ function TodoList(){
 
         <ul>
             {
-                todos.map((todo)=>{
-                    return<li>{todo}</li>
+                todos.map((todo,i)=>{
+                    return <Todo todo={todo} i={i} delTodo={handleDelete}></Todo>
                 })
             }
         </ul>

@@ -6,7 +6,7 @@ function App(){
     return(<div>
       <h1>hi react app</h1>
       <Navbar></Navbar>
-      <Counter></Counter>
+      
       <TodoList></TodoList>
     </div>)
 }
