@@ -1,27 +1,21 @@
-import React,{useEffect} from "react";
-import Button from "@mui/material/Button";
-function ButtonUsage(props) {
-  return <Button variant="contained">{props.children}</Button>;
-}
-function Counter() {
-  const [count, setCount] = React.useState(0);
-  const [x, setX] = React.useState(100);
-  function inc(){
-    setCount(count+1)
-  }
-  function dec(){
-    setCount(count-1)
-  }
+import {useReducer} from "react";
+import { counterReducer } from "./redusers";
 
-  useEffect(()=>{
-    console.log("sateesh")
-  },[]);
+
+
+function Counter() {
+  var [state,dispatch]=useReducer(counterReducer, {count:0})
+  console.log(state)
+ 
+
   return (
     <div className="mybox">
-      <h2>Value of X:{x}</h2>
-      <h1>Counter:{count}</h1>
-      <button onClick={()=>{inc()}}>increment</button>
-      <button onClick={()=>{dec()}}>decrement</button>
+      
+  
+      <h1>Counter:{state.count}</h1>
+      <button onClick={()=>{dispatch({type:"INC"})}}>increment</button>
+      <button onClick={()=>{dispatch({type:"DEC"})}}>decrement</button>
+      <button onClick={()=>{dispatch({type:"RESET"})}}>reset</button>
     </div>
   );
 }
