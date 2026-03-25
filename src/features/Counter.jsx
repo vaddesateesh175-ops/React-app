@@ -1,23 +1,32 @@
-import {useReducer} from "react";
-import { counterReducer } from "./redusers";
 
 
+import React from "react";
+import { connect } from "react-redux";
+import { decAction,incAction } from "../store/action";
 
-function Counter() {
-  var [state,dispatch]=useReducer(counterReducer, {count:0})
-  console.log(state)
- 
 
-  return (
-    <div className="mybox">
-      
-  
-      <h1>Counter:{state.count}</h1>
-      <button onClick={()=>{dispatch({type:"INC"})}}>increment</button>
-      <button onClick={()=>{dispatch({type:"DEC"})}}>decrement</button>
-      <button onClick={()=>{dispatch({type:"RESET"})}}>reset</button>
-    </div>
-  );
+function Counter(props) {
+  console.log(props);
+
+  return <div className="mybox">
+    <h1>count:{props.count}</h1>
+     <button onClick={() => {props.incFn();}}>  Increment </button>
+      <button onClick={() => {   props.decFn(); }}> Decrement</button>
+  </div>;
 }
 
-export default Counter;
+function mapStateToProps(state){
+  return state.countR;
+}
+function mapDispatchToProps(dispatch) {
+  return {
+    incFn: () => {
+      dispatch(incAction());
+    },
+    decFn: () => {
+      dispatch(decAction());
+    },
+  };
+}
+export default connect(mapStateToProps, mapDispatchToProps)(Counter);
+

@@ -1,5 +1,4 @@
 import React,{useReducer,useState} from "react";
-import { todoReducer } from "./redusers";
 
 function TodoList(){
     var [state,dispatch]=useReducer(todoReducer, {
