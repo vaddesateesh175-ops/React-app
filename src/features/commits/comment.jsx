@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-function Comment() {
+// import React, { useState } from "react";
+// function Comment() {
   
-}
+// }
 
-export default Comment;
+// export default Comment;
 
