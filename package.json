@@ -14,10 +14,16 @@
     "@emotion/styled": "^11.14.1",
     "@mui/material": "^7.3.9",
     "@reduxjs/toolkit": "^2.11.2",
+    "axios": "^1.16.0",
+    "bootstrap": "^5.3.8",
+    "cookie-session": "^2.1.1",
+    "express-session": "^1.19.0",
     "formik": "^2.4.9",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
-    "react-redux": "^9.2.0"
+    "react-redux": "^9.2.0",
+    "react-router-dom": "^7.15.0",
+    "session": "^0.1.0"
   },
   "devDependencies": {
     "@eslint/js": "^9.39.1",

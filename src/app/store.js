@@ -1,21 +1,25 @@
+
 import { configureStore } from "@reduxjs/toolkit";
 
-import commentReduser from "../features/commits/commentsSlice";
-import { todoApi } from "../services/todo";
-import { setupListeners } from '@reduxjs/toolkit/query'
-import counterReducer from "../features/counter/counterSlice";
+import { userApi } from "../services/userApi.js";
+
+// import userReduser from "../features/user/userSlice.js";
+import userReduser from "../features/user/userSlice.js";
+import { setupListeners } from "@reduxjs/toolkit/query";
+
 
 
 const store = configureStore({
   reducer: {
-    counterR: counterReducer,
-    [todoApi.reducerPath]: todoApi.reducer,
-   
-   
+    [userApi.reducerPath]: userApi.reducer,
+    userR: userReduser,
   },
    middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(todoApi.middleware),
+    getDefaultMiddleware().concat(
+      userApi.middleware
+    ),
   
 });
 
 setupListeners(store.dispatch)
+export default store;

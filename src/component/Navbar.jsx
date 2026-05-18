@@ -1,26 +1,73 @@
-import { Link } from "@mui/material";
 import React from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min.js';
+import { useDispatch, useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
+import { upadateUser } from "../features/user/userSlice";
 
-function Navbar(){
-     return (
+function Navbar() {
+  var { user } = useSelector((state) => state.userR);
+  var dispatch = useDispatch();
+  var navigate = useNavigate();
+  function logout() {
+    window.localStorage.clear();
+    dispatch(upadateUser({}));
+    navigate("/login");
+  }
+  return (
     <nav class="navbar navbar-expand-lg bg-body-tertiary">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Navbar</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        
-        <li class="nav-item">
-          <a class="nav-link" to="/task">tasklist</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" >tasklist</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-</nav>)
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          Hi!!!,<b>{user.username}</b>
+        </a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+          aria-controls="navbarNav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+         <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            {user.token && (
+              <>
+                <li class="nav-item">
+                  <Link class="nav-link" to="/tasks">Tasklist</Link>
+                </li>
+
+                <li class="nav-item">
+                  <Link class="nav-link" to="/photos">Photos</Link>
+                </li>
+                
+                <li class="nav-item">
+                  <Link class="nav-link" to="/books">Books</Link>
+                </li>
+
+                <li class="nav-item">
+                  <Link class="nav-link" to="/mybooks">My Books</Link>
+                </li>
+
+                <li>
+                  <button onClick={() => { logout();}}>Logout</button>
+                </li>
+              </>
+            )}
+            {!user.token && (
+              <>
+                <li class="nav-item">
+                  <Link class="nav-link" to="/login"> Login</Link>
+                </li>
+              </>
+            )}
+          </ul>
+        </div>
+      </div>
+    </nav>
+  );
 }
+
 export default Navbar;
