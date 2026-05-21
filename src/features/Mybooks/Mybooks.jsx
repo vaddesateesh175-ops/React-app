@@ -14,7 +14,7 @@ function Mybooks() {
     },[])
 
     const deletebook=(id)=>{
-        fetch(`https://twb2-server-3.onrender.com/books/${id}`,{
+        fetch(`https://twb2-server-3.onrender.com/${id}`,{
             method:"DELETE",
         })
         .then(res=>res.json())
