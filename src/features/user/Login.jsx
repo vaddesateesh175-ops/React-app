@@ -26,13 +26,13 @@ function Login() {
     // );
 
   return (
-    <div >
+    <div className="login-container">
 
         <h1>Login</h1>
         <form onSubmit={loginForm.handleSubmit}>
             <input type="text" {...loginForm.getFieldProps("username")} placeholder="Username" />
             <input type="password" {...loginForm.getFieldProps("password")} placeholder="Password" />
-            <button type="submit">LOGIN</button>
+            <button type="submit">Login</button>
         </form>
     </div>
   )

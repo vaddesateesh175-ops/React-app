@@ -1,0 +1,173 @@
+/* =========================
+   GLOBAL STYLES
+========================= */
+
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f6f9;
+  min-height: 100vh;
+}
+
+/* =========================
+   NAVBAR
+========================= */
+
+.custom-navbar{
+  background-color: #212529;
+  padding: 12px 20px;
+}
+
+.custom-navbar .navbar-brand{
+  color: white !important;
+  font-size: 22px;
+}
+
+.custom-navbar .nav-link{
+  color: white !important;
+  margin-right: 15px;
+  font-size: 18px;
+  transition: 0.3s;
+}
+
+.custom-navbar .nav-link:hover{
+  color: #0dcaf0 !important;
+}
+
+.custom-navbar button{
+  background-color: #0dcaf0;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.custom-navbar button:hover{
+  background-color: #0aa2c0;
+}
+
+/* =========================
+   LOGIN PAGE
+========================= */
+
+.login-container{
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-container form{
+  width: 350px;
+  background-color: white;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0px 0px 15px rgba(0,0,0,0.2);
+
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.login-container h1{
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.login-container input{
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.login-container input:focus{
+  outline: none;
+  border-color: #0dcaf0;
+}
+
+.login-container button{
+  padding: 12px;
+  border: none;
+  background-color: #0dcaf0;
+  color: white;
+  font-size: 17px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.login-container button:hover{
+  background-color: #0aa2c0;
+}
+
+/* =========================
+   BOOKS PAGE
+========================= */
+
+.books-container{
+  padding: 30px;
+}
+
+.books-container h1{
+  text-align: center;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.book-card{
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+}
+
+.book-header{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.book-card button{
+  background-color: #198754;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.book-card button:hover{
+  background-color: #157347;
+}
+
+/* =========================
+   MY BOOKS PAGE
+========================= */
+
+.mybooks-container{
+  padding: 30px;
+}
+
+.mybooks-container h1{
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.return-btn{
+  background-color: red !important;
+}
+
+.return-btn:hover{
+  background-color: darkred !important;
+}

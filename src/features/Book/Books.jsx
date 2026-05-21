@@ -42,13 +42,13 @@ function Books() {
     }
     
   return (
-    <div>
+    <div className="books-container">
         <h1>BOOKS</h1>
         <ul>
             {
                 books?.map((book,i)=>{
-                    return(<li>
-                        <div style={{display:'flex', alignItems:'center',gap:'20px'}}>
+                    return(<li className="book-card">
+                        <div className="book-header">
                             <h3>{book.title}</h3>
                             <button onClick={()=>{addbook(book)}}>Add Book</button>  
                         </div>
