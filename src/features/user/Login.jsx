@@ -32,7 +32,7 @@ function Login() {
         <form onSubmit={loginForm.handleSubmit}>
             <input type="text" {...loginForm.getFieldProps("username")} placeholder="Username" />
             <input type="password" {...loginForm.getFieldProps("password")} placeholder="Password" />
-            <button type="submit">Login</button>
+            <button type="submit">LOGIN</button>
         </form>
     </div>
   )
