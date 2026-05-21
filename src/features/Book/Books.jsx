@@ -5,7 +5,7 @@ function Books() {
     const username=localStorage.getItem("username")
     // var [selectedBook,setSelectedBook]=useState([])
     useEffect(()=>{
-        fetch("https://twb2-server-3.onrender.com",{
+        fetch("https://twb2-server-3.onrender.com/books",{
             headers:{
                  token:window.localStorage.getItem("token"),
             }
