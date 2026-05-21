@@ -5,7 +5,7 @@ function Books() {
     const username=localStorage.getItem("username")
     // var [selectedBook,setSelectedBook]=useState([])
     useEffect(()=>{
-        fetch("https://twb2-server-2.onrender.com/books",{
+        fetch("http://localhost:5500/books",{
             headers:{
                  token:window.localStorage.getItem("token"),
             }
@@ -16,7 +16,7 @@ function Books() {
     
     const addbook=(book)=>{
 
-                    fetch("https://twb2-server-2.onrender.com/addbook",{
+         fetch("http://localhost:5500/addbook",{
             method:"POST",
             headers:{
                 "Content-Type":"application/json",

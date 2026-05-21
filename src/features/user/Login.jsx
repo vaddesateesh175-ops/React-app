@@ -26,7 +26,7 @@ function Login() {
     // );
 
   return (
-    <div className="login-container">
+    <div >
 
         <h1>Login</h1>
         <form onSubmit={loginForm.handleSubmit}>

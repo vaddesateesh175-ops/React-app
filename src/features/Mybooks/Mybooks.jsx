@@ -6,7 +6,7 @@ function Mybooks() {
         "username"
     );
     useEffect(()=>{
-        fetch(` https://twb2-server-2.onrender.com/${username}`)
+        fetch(`http://localhost:5500/books/${username}`)
         .then(res=>res.json())
         .then(data=>{
             setMybooks(data)
@@ -14,7 +14,7 @@ function Mybooks() {
     },[])
 
     const deletebook=(id)=>{
-        fetch(` https://twb2-server-2.onrender.com/${id}`,{
+        fetch(`http://localhost:5500/${id}`,{
             method:"DELETE",
         })
         .then(res=>res.json())
