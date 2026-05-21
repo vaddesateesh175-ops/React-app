@@ -15,9 +15,9 @@ function Navbar() {
     navigate("/login");
   }
   return (
-   <nav className="navbar navbar-expand-lg custom-navbar">
-      <div className="container-fluid">
-        <a className="navbar-brand" href="#">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
           Hi!!!,<b>{user.username}</b>
         </a>
         <button

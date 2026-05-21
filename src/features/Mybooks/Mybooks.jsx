@@ -25,14 +25,14 @@ function Mybooks() {
 
 
   return (
-    <div className="mybooks-container">
+    <div>
         <h1>My Books</h1>
         {
             mybooks?.map((book)=>{
-                return(<li className="book-card">
-                    <div className="book-header">
+                return(<li>
+                    <div style={{display:'flex', alignItems:'center',gap:'20px'}}>
                         <h3>{book.booktitle}</h3>
-                        <button  className="return-btn" onClick={()=>{deletebook(book._id)}}>Return Book</button>
+                        <button onClick={()=>{deletebook(book._id)}}>Return Book</button>
                     </div>
                     <p>Author Name:{book.author}</p>
                 </li>)
