@@ -6,7 +6,7 @@ function Mybooks() {
         "username"
     );
     useEffect(()=>{
-        fetch(`http://localhost:5500/books/${username}`)
+        fetch(` https://twb2-server-2.onrender.com/${username}`)
         .then(res=>res.json())
         .then(data=>{
             setMybooks(data)
@@ -14,7 +14,7 @@ function Mybooks() {
     },[])
 
     const deletebook=(id)=>{
-        fetch(`http://localhost:5500/${id}`,{
+        fetch(` https://twb2-server-2.onrender.com/${id}`,{
             method:"DELETE",
         })
         .then(res=>res.json())
@@ -25,14 +25,14 @@ function Mybooks() {
 
 
   return (
-    <div>
+    <div className="mybooks-container">
         <h1>My Books</h1>
         {
             mybooks?.map((book)=>{
-                return(<li>
-                    <div style={{display:'flex', alignItems:'center',gap:'20px'}}>
+                return(<li className="book-card">
+                    <div className="book-header">
                         <h3>{book.booktitle}</h3>
-                        <button onClick={()=>{deletebook(book._id)}}>Return Book</button>
+                        <button  className="return-btn" onClick={()=>{deletebook(book._id)}}>Return Book</button>
                     </div>
                     <p>Author Name:{book.author}</p>
                 </li>)
